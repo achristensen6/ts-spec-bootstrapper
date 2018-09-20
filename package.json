@@ -4,7 +4,7 @@
   "description": "Bootstraps missing tests in TypeScript projects",
   "main": "dist/main.js",
   "bin": {
-    "ts-spec-bootstrapper": "dist/main.js"
+    "ts-spec-bootstrapper": "dist/cli.js"
   },
   "scripts": {
     "start": "npm run build && npm run post-build",
