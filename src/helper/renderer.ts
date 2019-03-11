@@ -1,5 +1,5 @@
-import { Statistics, ScriptConfiguration } from './types';
-import { SPACER } from './constants';
+import { SPACER } from '../constants';
+import { ScriptConfiguration, Statistics } from '../types/types';
 
 // tslint:disable:no-console
 
