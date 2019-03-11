@@ -1,5 +1,5 @@
-import { ScriptConfiguration } from './types';
-import { PARAMS } from './constants';
+import { PARAMS } from '../constants';
+import { ScriptConfiguration } from '../types/types';
 
 const PARAM_ASSIGNMENT_CHARACTER = '=';
 const DEFAULT_ROOT_PATH = './';

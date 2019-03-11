@@ -1,6 +1,6 @@
 {
   "name": "ts-spec-bootstrapper",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Bootstraps missing tests in TypeScript projects",
   "main": "dist/main.js",
   "bin": {
@@ -34,12 +34,12 @@
   "author": "Andre Sander <andre.sander@mercedes-benz.io>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^3.0.1",
-    "@phenomnomnominal/tsquery": "^2.0.0-beta.7",
-    "ts-node": "^7.0.1"
+    "@phenomnomnominal/tsquery": "^3.0.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333"
   },
   "devDependencies": {
-    "@types/node": "^10.7.0",
-    "tslint": "^5.11.0"
+    "@types/node": "^11.11.0",
+    "tslint": "^5.13.1"
   }
 }
