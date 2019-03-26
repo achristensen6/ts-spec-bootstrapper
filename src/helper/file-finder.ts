@@ -1,31 +1,31 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const fetchFilesInDirectoryForFileExtension = (dir: string, matchPattern: string): Array<any> => {
+const fetchFilesInDirectoryForFileExtension = (dir: string, fileEnding: string): Array<any> => {
   if (!fs.existsSync(dir)) {
     return [];
   }
 
-  const files: Array<any> = fs.readdirSync(dir);
   const matches: Array<string> = [];
 
-  for (let i = 0; i < files.length; i++) {
-    const filePath: string = path.join(dir, files[i]);
-    const isDirectory: boolean = fs.lstatSync(filePath).isDirectory();
+  fs.readdirSync(dir)
+    .forEach((file: string) => {
+      const filePath: string = path.join(dir, file);
+      const isDirectory: boolean = fs.lstatSync(filePath).isDirectory();
 
-    if (isDirectory) {
-      const children = fetchFilesInDirectoryForFileExtension(filePath, matchPattern);
-      matches.push(...children);
-    } else if (filePath.indexOf(matchPattern) >= 0) {
-      matches.push(filePath);
-    }
-  }
+      if (isDirectory) {
+        const children = fetchFilesInDirectoryForFileExtension(filePath, fileEnding);
+        matches.push(...children);
+      } else if (filePath.endsWith(fileEnding)) {
+        matches.push(filePath);
+      }
+    });
 
   return matches;
 };
 
 export class FileFinder {
-  public static getMatchingFiles(rootDir: string, matchPattern: string): Array<string> {
-    return fetchFilesInDirectoryForFileExtension(rootDir, matchPattern);
+  public static getMatchingFiles(rootDir: string, fileEnding: string): Array<string> {
+    return fetchFilesInDirectoryForFileExtension(rootDir, fileEnding);
   }
 }

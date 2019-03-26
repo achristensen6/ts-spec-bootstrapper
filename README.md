@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/ts-spec-bootstrapper.svg)](https://img.shields.io/npm/v/ts-spec-bootstrapper.svg)
+
 # TS Spec Bootstrapper
 
 Bootstraps tests for all test-able functions in a TypeScript project. Running this script...
